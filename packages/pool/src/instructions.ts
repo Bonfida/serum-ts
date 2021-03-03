@@ -60,6 +60,8 @@ export class PoolInstructions {
    * `poolTokenMint`.
    * @param vaultSignerNonce Nonce used to generate `vaultSigner`.
    * @param lqdFeeAccount Pool token spl-token account owned by the LQD fee owner.
+   * @param max_capacity The maximum of pooltokens that can ever be minted.
+   * @param max_single_deposit The maximum of pooltokens one address can create.
    * @param initializerFeeAccount Pool token spl-token account owned by the pool initializer.
    * @param feeRate Fee rate for creations/redemptions times 10^6.
    * @param additionalAccounts Any custom pool-specific accounts needed to
@@ -75,6 +77,8 @@ export class PoolInstructions {
     vaultSigner: PublicKey,
     vaultSignerNonce: number,
     lqdFeeAccount: PublicKey,
+    max_capacity: number,
+    max_single_deposit: number,
     initializerFeeAccount: PublicKey,
     feeRate: number,
     additionalAccounts?: AccountMeta[],
@@ -105,6 +109,8 @@ export class PoolInstructions {
           vaultSignerNonce,
           assetsLength: vaults.length,
           poolName,
+          max_capacity,
+          max_single_deposit,
           feeRate,
           customData: customData ?? Buffer.alloc(0),
         },
