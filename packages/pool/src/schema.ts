@@ -65,6 +65,8 @@ export interface InitializePoolRequest {
   vaultSignerNonce: number;
   assetsLength: number;
   poolName: string;
+  max_capacity: u64;
+  max_single_deposit: u64;
   feeRate: number;
   customData: Buffer;
 }
@@ -92,6 +94,8 @@ export const PoolState: Layout<PoolState> = tagged(
   struct([
     publicKey('poolTokenMint'),
     vec(AssetInfo, 'assets'),
+    u64('max_capacity'),
+    u64('max_single_deposit'),
     publicKey('vaultSigner'),
     u8('vaultSignerNonce'),
     vec(ParamDesc, 'accountParams'),
@@ -116,6 +120,8 @@ export const InitializePoolRequest: Layout<InitializePoolRequest> = struct([
   u8('vaultSignerNonce'),
   u8('assetsLength'),
   str('poolName'),
+  u64('max_capacity'),
+  u64('max_single_deposit'),
   u32('feeRate'),
   vecU8('customData'),
 ]);
