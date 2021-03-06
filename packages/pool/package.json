@@ -1,6 +1,6 @@
 {
   "name": "@bonfida/limited-pool",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Library for interacting with limited serum pools",
   "repository": "project-serum/serum-ts",
   "main": "dist/lib/index.js",
