@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
   "name": "@project-serum/pool",
   "version": "0.2.2",
   "description": "Library for interacting with the serum pools",
+=======
+  "name": "@bonfida/limited-pool",
+  "version": "0.0.2",
+  "description": "Library for interacting with limited serum pools",
+>>>>>>> e5130a1... v0.0.2
   "repository": "project-serum/serum-ts",
   "main": "dist/lib/index.js",
   "source": "src/index.js",
