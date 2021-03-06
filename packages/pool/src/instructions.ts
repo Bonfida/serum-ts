@@ -37,7 +37,7 @@ export const RETBUF_PROGRAM_ID = new PublicKey(
 );
 
 export const LQD_FEE_OWNER_ADDRESS = new PublicKey(
-  '3LTvJCPiPSMjX1kBJ6ZfEhn4G2hM46aJ1yEZsk8i12TK',
+  'GTdpKc3miG9qCMgB8XfCveHZvCEbpGBPnHjBJaSN8dvi',
 );
 
 /**

@@ -74,6 +74,12 @@ export interface SimplePoolParams {
 
   /** Any additional accounts needed to initalize the pool. */
   additionalAccounts?: AccountMeta[];
+
+  /** Max capacity */
+  maxCapacity: number;
+
+  /** Max single deposit */
+  maxSingleDeposit: number;
 }
 
 /**
@@ -108,6 +114,8 @@ export class PoolTransactions {
       creatorAssets,
       feeRate = 2500,
       additionalAccounts = [],
+      maxCapacity,
+      maxSingleDeposit,
     } = params;
     if (assetMints.length !== initialAssetQuantities.length) {
       throw new Error(
@@ -231,6 +239,8 @@ export class PoolTransactions {
         vaultSigner,
         vaultSignerNonce,
         lqdFeeAddress,
+        maxCapacity,
+        maxSingleDeposit,
         creatorPoolTokenAddress,
         feeRate,
         additionalAccounts,

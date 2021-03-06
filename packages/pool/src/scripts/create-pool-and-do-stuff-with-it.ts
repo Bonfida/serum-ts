@@ -46,6 +46,9 @@ async function doStuff() {
     programId: POOL_PROGRAM_ID,
     poolName: 'Test Pool',
     feeRate: 2500,
+    additionalAccounts: [],
+    maxCapacity: 10000,
+    maxSingleDeposit: 10,
   });
   console.log('Pool address:', poolAddress.toBase58());
   for (const { transaction, signers } of transactions) {
