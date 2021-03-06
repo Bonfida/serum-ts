@@ -23,6 +23,10 @@ export interface PoolState {
   poolTokenMint: PublicKey;
   /** Assets in the pool. */
   assets: AssetInfo[];
+  /** Pool max capacity */
+  maxCapacity: number;
+  /** Pool max deposit capacity */
+  maxSingleDeposit: number;
   /** Owner of the assets in the pool. */
   vaultSigner: PublicKey;
   /** Nonce used to generate `vaultSigner`; only used internally by the pool program. */
@@ -65,8 +69,8 @@ export interface InitializePoolRequest {
   vaultSignerNonce: number;
   assetsLength: number;
   poolName: string;
-  max_capacity: u64;
-  max_single_deposit: u64;
+  max_capacity: number;
+  max_single_deposit: number;
   feeRate: number;
   customData: Buffer;
 }
