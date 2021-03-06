@@ -6,6 +6,7 @@ import {
 } from '@solana/web3.js';
 import { encodePoolRequest, PoolAction, PoolState } from './schema';
 import { TOKEN_PROGRAM_ID } from '@project-serum/serum/lib/token-instructions';
+import BN from 'bn.js';
 
 export interface PoolInfo {
   address: PublicKey;
@@ -77,8 +78,8 @@ export class PoolInstructions {
     vaultSigner: PublicKey,
     vaultSignerNonce: number,
     lqdFeeAccount: PublicKey,
-    max_capacity: number,
-    max_single_deposit: number,
+    max_capacity: BN,
+    max_single_deposit: BN,
     initializerFeeAccount: PublicKey,
     feeRate: number,
     additionalAccounts?: AccountMeta[],

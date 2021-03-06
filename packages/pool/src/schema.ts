@@ -24,9 +24,9 @@ export interface PoolState {
   /** Assets in the pool. */
   assets: AssetInfo[];
   /** Pool max capacity */
-  maxCapacity: number;
+  maxCapacity: BN;
   /** Pool max deposit capacity */
-  maxSingleDeposit: number;
+  maxSingleDeposit: BN;
   /** Owner of the assets in the pool. */
   vaultSigner: PublicKey;
   /** Nonce used to generate `vaultSigner`; only used internally by the pool program. */
@@ -69,8 +69,8 @@ export interface InitializePoolRequest {
   vaultSignerNonce: number;
   assetsLength: number;
   poolName: string;
-  max_capacity: number;
-  max_single_deposit: number;
+  max_capacity: BN;
+  max_single_deposit: BN;
   feeRate: number;
   customData: Buffer;
 }
@@ -150,13 +150,13 @@ export function decodePoolState(data: Buffer): PoolState {
 }
 
 export function encodePoolState(state: PoolState): Buffer {
-  const buffer = Buffer.alloc(1000);
+  const buffer = Buffer.alloc(1024);
   const len = PoolState.encode(state, buffer);
   return buffer.slice(0, len);
 }
 
 export function encodePoolRequest(poolRequest: PoolRequest): Buffer {
-  const buffer = Buffer.alloc(1000);
+  const buffer = Buffer.alloc(1024);
   const len = PoolRequest.encode(poolRequest, buffer);
   return buffer.slice(0, len);
 }

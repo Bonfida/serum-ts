@@ -34,7 +34,7 @@ export const AdminRequest: Layout<AdminRequest> = tagged(
 );
 
 function encodeAdminRequest(request: AdminRequest): Buffer {
-  const buffer = Buffer.alloc(1000);
+  const buffer = Buffer.alloc(1024);
   const len = AdminRequest.encode(request, buffer);
   return buffer.slice(0, len);
 }

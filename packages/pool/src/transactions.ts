@@ -76,10 +76,10 @@ export interface SimplePoolParams {
   additionalAccounts?: AccountMeta[];
 
   /** Max capacity */
-  maxCapacity: number;
+  maxCapacity: BN;
 
   /** Max single deposit */
-  maxSingleDeposit: number;
+  maxSingleDeposit: BN;
 }
 
 /**
